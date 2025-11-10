@@ -1,0 +1,66 @@
+/* ===== Afinados para que combine con Bootstrap en modo claro/oscuro ===== */
+
+/* Textos secundarios y enlaces "link-secondary" de Bootstrap */
+.text-secondary,
+.link-secondary { color: var(--muted) !important; }
+.link-secondary:hover { color: var(--primary) !important; }
+
+/* Badges "subtle" (Bootstrap 5.3) para que respeten tu paleta */
+.badge.bg-primary-subtle {
+  background: color-mix(in oklab, var(--primary) 18%, transparent);
+  color: color-mix(in oklab, var(--primary) 80%, var(--fg));
+}
+.badge.text-primary-emphasis { color: var(--primary) !important; }
+
+/* Formularios sobre fondo oscuro: inputs, selects, textareas */
+.form-control, .form-select, .form-control:focus, .form-select:focus {
+  background: var(--card);
+  color: var(--fg);
+  border-color: var(--card-border);
+}
+.form-control::placeholder { color: var(--muted); opacity: .85; }
+.form-control:focus, .form-select:focus {
+  outline: 2px solid var(--primary);
+  box-shadow: none;
+  border-color: var(--primary);
+}
+
+/* Botones outline que usas en navegación de niveles */
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: color-mix(in oklab, var(--primary) 65%, var(--fg));
+}
+.btn-outline-primary:hover {
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Código y preformateado: legible en ambos temas */
+code {
+  background: color-mix(in oklab, var(--card) 92%, var(--bg));
+  padding: .1rem .3rem;
+  border-radius: .35rem;
+}
+pre {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--card-border);
+  border-radius: .5rem;
+  padding: .75rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Hover en lista de niveles */
+.levels-list li:hover { text-decoration: underline; }
+
+/* Links en tarjetas (por si agregas más) */
+.card-surface a { color: var(--primary); }
+.card-surface a:hover { opacity: .9; }
+
+/* Scrollbar sutil (Chromium/Edge) */
+*::-webkit-scrollbar { height: 10px; width: 10px; }
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--muted) 35%, transparent);
+  border-radius: 8px;
+}
